@@ -39,7 +39,6 @@ data = JSON.parse(File.read('spec/fixtures/contestants.json'))
 #   ]
 # }
 def get_first_name_of_season_winner(data, season)
-
   data[season].find{ |x| x["status"] == "Winner" }.fetch("name").split(" ")[0]
 end
 
