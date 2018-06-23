@@ -43,8 +43,12 @@ def get_first_name_of_season_winner(data, season)
 end
 
 def get_contestant_name(data, occupation)
-  data.each do | season |
-    
+  data.find do |season|
+    season.find { |contestant| contestant.fetch("occupation") == occupation }
+  end
+  # data.each do | season, contestants |
+  #   contestants.each do |
+
 end
 
 def count_contestants_by_hometown(data, hometown)
